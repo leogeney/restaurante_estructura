@@ -33,7 +33,7 @@ public class Venta extends javax.swing.JFrame {
         create = new javax.swing.JButton();
         consult = new javax.swing.JButton();
         editar = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        analizar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -67,8 +67,13 @@ public class Venta extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("ANALIZAR INFORMACION");
-        jButton4.setEnabled(false);
+        analizar.setText("ANALIZAR INFORMACION");
+        analizar.setEnabled(false);
+        analizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                analizarActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 51));
 
@@ -157,7 +162,7 @@ public class Venta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(157, 157, 157)
-                        .addComponent(jButton4))
+                        .addComponent(analizar))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -190,7 +195,7 @@ public class Venta extends javax.swing.JFrame {
                     .addComponent(consult)
                     .addComponent(editar))
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(analizar)
                 .addGap(31, 31, 31)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -215,7 +220,14 @@ public class Venta extends javax.swing.JFrame {
 
     private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
         objemenu.ingresarDatos();
+        analizar.setEnabled(true);
     }//GEN-LAST:event_editarActionPerformed
+
+    private void analizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analizarActionPerformed
+      objemenu.conocerPlatosTotales();
+      objemenu.conocerSemanaMayor();
+      
+    }//GEN-LAST:event_analizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,10 +265,10 @@ public class Venta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton analizar;
     private javax.swing.JButton consult;
     private javax.swing.JButton create;
     private javax.swing.JButton editar;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
